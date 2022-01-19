@@ -7,6 +7,10 @@
 
     <title>Laravel</title>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/vue.js') }}" defer></script>
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -51,7 +55,7 @@
         }
 
         .links>a {
-            color: #636b6f;
+            color: #2124c7;
             padding: 0 25px;
             font-size: 13px;
             font-weight: 600;
@@ -89,14 +93,7 @@
             </div>
 
             <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
+                <a href="/guest">You're a Guest User ?</a>
             </div>
         </div>
     </div>

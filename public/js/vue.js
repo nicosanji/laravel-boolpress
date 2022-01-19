@@ -97,6 +97,8 @@
 //
 //
 //
+//
+//
 
 /***/ }),
 
@@ -616,9 +618,16 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Ciao")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("h2", [_vm._v("Post List")])])
+  },
+]
 render._withStripped = true
 
 
@@ -13036,7 +13045,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Boolean\esperimenti\laravel-boolpress-2\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Boolean\laravel-boolpress\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

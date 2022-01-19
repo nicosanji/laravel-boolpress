@@ -1,5 +1,7 @@
 <template>
-  <h1>Ciao</h1>
+  <div>
+    <h2>Post List</h2>
+  </div>
 </template>
 
 <script>
