@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //rotta api
-Route::get("/", "Api\PostController@index");
+Route::get("posts", "Api\PostController@index");

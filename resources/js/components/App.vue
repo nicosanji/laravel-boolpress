@@ -1,12 +1,16 @@
 <template>
-  <div class="container text-center">
+  <div>
+    <div class="container text-center">
       <h1>{{ myMessage }}</h1>
-    <div v-for="post in postsLists" :key="post.id">
+      <div v-for="post in postsList" :key="post.id">
+        {{ post.title }}
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "app",
   data() {
@@ -16,8 +20,9 @@ export default {
     };
   },
   mounted() {
-    window.axios.get("/api/posts").then((resp) => {
+    axios.get("/api/posts").then((resp) => {
       this.postsList = resp.data;
+      console.log(this.postsList);
     });
   },
 };
