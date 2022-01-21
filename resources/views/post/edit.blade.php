@@ -15,6 +15,19 @@
                 <label class="form-label">Description</label>
                 <input value='{{ $post['description'] }}' type="text" class="form-control" name='description'>
             </div>
+
+            <div class="mb-3">
+                <div class="form-group">
+                    <label class="form-label">Categoria</label>
+                    <select name="category_id" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->cat_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
             <div class="row justify-content-center">
                 <button type="submit" class="btn btn-success mr-3">Edit & Save</button>
                 <button type="reset" class="btn btn-secondary mr-3">Reset</button>

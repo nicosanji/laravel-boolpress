@@ -13,8 +13,23 @@
 
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                <input type="text" class="form-control" name='description'>
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description"
+                    value="{{ old('description') }}"></textarea>
             </div>
+
+            <div class="mb-3">
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select name="category_id" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->cat_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+            </div>
+
+
             <div class="row justify-content-center">
                 <button type="submit" class="btn btn-primary mr-3">Create This Post</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>
@@ -22,4 +37,9 @@
 
         </form>
     </div>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        bkLib.onDomLoaded(nicEditors.allTextAreas);
+    </script>
 @endsection

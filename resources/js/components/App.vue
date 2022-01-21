@@ -1,9 +1,10 @@
 <template>
   <div>
     <div class="container text-center">
-      <h1>{{ myMessage }}</h1>
-      <div v-for="post in postsList" :key="post.id">
-        {{ post.title }}
+      <h1 class="pb-5">{{ myMessage }}</h1>
+      <div class="border-bottom border-dark" v-for="post in postsList" :key="post.id">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
       </div>
     </div>
   </div>

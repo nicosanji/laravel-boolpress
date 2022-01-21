@@ -1921,6 +1921,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
@@ -2430,12 +2431,18 @@ var render = function () {
       "div",
       { staticClass: "container text-center" },
       [
-        _c("h1", [_vm._v(_vm._s(_vm.myMessage))]),
+        _c("h1", { staticClass: "pb-5" }, [_vm._v(_vm._s(_vm.myMessage))]),
         _vm._v(" "),
         _vm._l(_vm.postsList, function (post) {
-          return _c("div", { key: post.id }, [
-            _vm._v("\n      " + _vm._s(post.title) + "\n    "),
-          ])
+          return _c(
+            "div",
+            { key: post.id, staticClass: "border-bottom border-dark" },
+            [
+              _c("h3", [_vm._v(_vm._s(post.title))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(post.description))]),
+            ]
+          )
         }),
       ],
       2

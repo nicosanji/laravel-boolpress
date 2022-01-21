@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -28,7 +29,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        $categories = Category::all();
+
+        return view("post.create", compact("categories"));
     }
 
     /**
@@ -40,11 +43,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
-        $newPost = new Post;
-        $newPost->fill($data);
+        $newPost = new Post();
+        $newPost->title = $data['title'];
+        $newPost->description = $data['description'];
+        $newPost->category_id = $data['category_id'];
         $newPost->user_id = Auth::user()->id;
-
         $newPost->save();
 
         return redirect()->route('admin.post.index');
@@ -69,7 +72,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('post.edit', compact('post'));
+        $categories = Category::all();
+        return view('post.edit', [
+            "post" => $post,
+            "categories" => $categories,
+            //"tags" => $tags
+        ]);
     }
 
     /**

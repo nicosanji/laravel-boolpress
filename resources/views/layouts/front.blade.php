@@ -23,7 +23,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/admin') }}">Admin Dashboard</a>
+                    <a class="h5" href="{{ url('/admin') }}">Admin Dashboard</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
 
@@ -34,12 +34,12 @@
             </div>
         @endif
 
-        <div class="content">
+    </div>
+    <div class="content">
 
-            @yield('content')
+        @yield('content')
 
 
-        </div>
     </div>
 </body>
 

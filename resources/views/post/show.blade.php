@@ -5,7 +5,8 @@
 
         <h1 class="text-primary text-uppercase">{{ $post['title'] }}</h1>
         <h5><span class="font-italic">Description: </span>{{ $post['description'] }}</h5>
-        <h3 class="text-primary text-uppercase"><span class="font-italic">Created by </span>{{ $post->user->name }}</h3>
+        <h3 class="text-primary"><span class="font-italic">Created by </span>{{ $post->user->name }}</h3>
+        <h3 class="text-primary"><span class="font-italic">Category </span>{{ $post->category->cat_name }}</h3>
 
         <div class="row justify-content-center mt-5">
             <a class="btn btn-primary mr-5" href="{{ route('admin.post.edit', $post->id) }}">Edit This Post</a>
