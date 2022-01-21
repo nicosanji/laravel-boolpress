@@ -1924,6 +1924,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "app",
@@ -1937,8 +1947,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/posts").then(function (resp) {
-      _this.postsList = resp.data;
-      console.log(_this.postsList);
+      _this.postsList = resp.data; //console.log(this.postsList);
     });
   }
 });
@@ -2442,12 +2451,25 @@ var render = function () {
             [
               _c("h3", [_vm._v(_vm._s(post.title))]),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(post.description))]),
+              _c("p", { domProps: { innerHTML: _vm._s(post.description) } }),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(post.user.name))]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(post.category.cat_name))]),
-            ]
+              _vm._v(" "),
+              _vm._l(post.tags, function (tag) {
+                return _c(
+                  "span",
+                  {
+                    key: tag.id,
+                    staticClass:
+                      "badge bg-primary text-white ms-2 rounded-pill text-small",
+                  },
+                  [_vm._v(_vm._s(tag.tag_name))]
+                )
+              }),
+            ],
+            2
           )
         }),
       ],

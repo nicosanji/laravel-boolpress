@@ -13,7 +13,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                <input value='{{ $post['description'] }}' type="text" class="form-control" name='description'>
+                <textarea class="form-control" name="description" value="{!! old('description') !!}"></textarea>
             </div>
 
             <div class="mb-3">
@@ -28,6 +28,17 @@
 
             </div>
 
+            <div class="mb-3">
+                <div class="form-group">
+                    @foreach ($tags as $tag)
+                        <label>
+                            {{ $tag->tag_name }}
+                            <input name="tags[]" type="checkbox" value="{{ $tag->id }}" @if ($post->tags->contains($tag)) checked @endif>
+                        </label>
+                    @endforeach
+                </div>
+            </div>
+
             <div class="row justify-content-center">
                 <button type="submit" class="btn btn-success mr-3">Edit & Save</button>
                 <button type="reset" class="btn btn-secondary mr-3">Reset</button>
@@ -39,4 +50,9 @@
             <input class="btn btn-danger" type="submit" value="Delete This Post">
         </form>
     </div>
+    <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        bkLib.onDomLoaded(nicEditors.allTextAreas);
+    </script>
 @endsection
