@@ -89,6 +89,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+        //dd($post);
         $data = $request->all();
 
         $post->update($data);

@@ -5,6 +5,8 @@
       <div class="border-bottom border-dark" v-for="post in postsList" :key="post.id">
         <h3>{{ post.title }}</h3>
         <p>{{ post.description }}</p>
+        <p>{{ post.user.name }}</p>
+        <p>{{ post.category.cat_name }}</p>
       </div>
     </div>
   </div>
