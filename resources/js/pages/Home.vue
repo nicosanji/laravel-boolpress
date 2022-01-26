@@ -7,7 +7,9 @@
         v-for="post in postsList"
         :key="post.id"
       >
-        <h3>{{ post.title }}</h3>
+        <router-link :to="{ name: 'posts.show', params: { id: post.id } }">
+          <h3>{{ post.title }}</h3>
+        </router-link>
         <p v-html="post.description"></p>
         <p>{{ post.user.name }}</p>
         <p>{{ post.category.cat_name }}</p>

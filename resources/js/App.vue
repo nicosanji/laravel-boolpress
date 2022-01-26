@@ -20,7 +20,7 @@ export default {
   components: { Navbar, TheFooter },
   data() {
     return {
-      helloMsg: "Benvenuto in Matrix",
+      
     };
   },
 };
