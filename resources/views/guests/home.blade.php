@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Nico Boolpress') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    {{-- il body di questa pagina "guest" è interamente fatto con Vue --}}
     <div id="app"></div>
 </body>
 

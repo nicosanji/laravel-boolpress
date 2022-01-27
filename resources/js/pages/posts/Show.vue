@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h3>{{ post.title }}</h3>
-    <p v-html="post.description"></p>
-    <p>{{ post.category.cat_name }}</p>
-    <p>{{ post.user.name }}</p>
+    <h3>{{ post ? post.title : "" }}</h3>
+    <p v-html="post ? post.description : ''"></p>
+    <p>{{ post ? post.category.cat_name : "" }}</p>
+    <p>{{ post ? post.user.name : "" }}</p>
     <span
-      v-for="tag in post.tags"
+      v-for="tag in post ? post.tags : ''"
       :key="tag.id"
       class="badge bg-primary text-white ms-2 rounded-pill text-small"
       >{{ tag.tag_name }}</span
@@ -17,7 +17,7 @@
 export default {
   data() {
     return {
-      post: Object,
+      post: null,
     };
   },
   methods: {

@@ -1,24 +1,31 @@
 <template>
   <div>
-    <div class="container text-center">
-      <h1 class="pb-5">{{ myMessage }}</h1>
-      <div
-        class="border-bottom border-dark"
-        v-for="post in postsList"
-        :key="post.id"
-      >
-        <router-link :to="{ name: 'posts.show', params: { id: post.id } }">
-          <h3>{{ post.title }}</h3>
-        </router-link>
-        <p v-html="post.description"></p>
-        <p>{{ post.user.name }}</p>
-        <p>{{ post.category.cat_name }}</p>
-        <span
-          v-for="tag in post.tags"
-          :key="tag.id"
-          class="badge bg-primary text-white ms-2 rounded-pill text-small"
-          >{{ tag.tag_name }}</span
+    <div class="container">
+      <h1 class="display-4 py-4 mb-0 text-center font-weight-bold">
+        {{ myMessage.toUpperCase() }}
+      </h1>
+      <div class="d-flex flex-column text-center">
+        <div
+          class="bg-dark text-light p-2 mb-4 rounded"
+          v-for="post in postsList"
+          :key="post.id"
         >
+          <router-link :to="{ name: 'posts.show', params: { id: post.id } }">
+            <h3>{{ post.title }}</h3>
+          </router-link>
+          <p
+            class="bg-light text-dark rounded mx-5"
+            v-html="post.description"
+          ></p>
+          <p>Created by: {{ post.user.name.toUpperCase() }}</p>
+          <p>Category: {{ post.category.cat_name }}</p>
+          <span
+            v-for="tag in post.tags"
+            :key="tag.id"
+            class="badge bg-primary text-white ms-2 rounded-pill text-small"
+            >{{ tag.tag_name }}</span
+          >
+        </div>
       </div>
       <div class="row">
         <div class="col justify-content-center d-flex">
@@ -90,4 +97,7 @@ export default {
 </script>
 
 <style>
+a:hover {
+  color: #f8f9fa;
+}
 </style>
