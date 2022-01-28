@@ -4,15 +4,19 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link class="nav-link py-4" to="/">Home</router-link>
+            <router-link class="nav-link py-4 router-link-active" to="/"
+              >Home</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link py-4" :to="{ name: 'contact' }"
+            <router-link
+              class="nav-link py-4 router-link-active"
+              :to="{ name: 'contact' }"
               >Contact</router-link
             >
           </li>
           <li class="nav-item">
-            <router-link class="nav-link py-4" to="/about"
+            <router-link class="nav-link py-4 router-link-active" to="/about"
               >About Us</router-link
             >
           </li>
@@ -46,4 +50,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+nav .router-link-exact-active {
+  color: red !important;
+}
+</style>

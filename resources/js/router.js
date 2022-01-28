@@ -5,6 +5,8 @@ import Home from "./pages/Home.vue";
 import About from "./pages/About.vue";
 import Contact from "./pages/Contact.vue";
 import PostsShow from "./pages/posts/Show.vue";
+import CategoryShow from "./pages/categories/Show.vue";
+
 
 
 Vue.use(VueRouter);
@@ -31,6 +33,11 @@ const router = new VueRouter({
       path: "/posts/:id",
       name: "posts.show",
       component: PostsShow,
+    },
+    {
+      path: "/categories/:category",
+      name: "category.show",
+      component: CategoryShow
     },
   ],
 });

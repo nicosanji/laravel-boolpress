@@ -11,9 +11,18 @@ class PostController extends Controller
 {
     function index(Request $request)
     {
+        $category = $request->query("category");
         // $postList = Post::all();
-        $postList = Post::with('category')->with('user')->with('tags')->paginate(4);
 
+        $postList = Post::with('category')->with('user')->with('tags');
+
+        if ($category) {
+            $postList = $postList->where("category_id", $category);
+        }
+
+        $postList = $postList->paginate(4);
+
+        sleep(2);
 
         return response()->json($postList);
     }
