@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg bg-dark text-primary" id="mainNav">
     <div class="container">
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav h5">
           <li class="nav-item">
             <router-link class="nav-link py-4 router-link-active" to="/"
               >Home</router-link
@@ -23,7 +23,7 @@
           <li class="nav-item">
             <!-- data bug -->
             <a class="nav-link py-4" href="/login">{{
-              user.name ? user.name : "Login"
+              user.name ? user.name : "Admin Area"
             }}</a>
           </li>
         </ul>
@@ -52,6 +52,6 @@ export default {
 
 <style lang="scss">
 nav .router-link-exact-active {
-  color: red !important;
+  color: white !important;
 }
 </style>
