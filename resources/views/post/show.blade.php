@@ -4,6 +4,8 @@
     <div class="container">
 
         <h1 class="text-primary text-uppercase">{{ $post['title'] }}</h1>
+        <img src="{{ asset('storage/' . $post->cover_img) }}" alt="Image for '{{ $post['title'] }}'"
+            class="w-50">
         <h5><span class="font-italic">Description: </span>{!! $post->description !!}</h5>
         <h3 class="text-primary"><span class="font-italic">Created by </span>{{ $post->user->name }}</h3>
         <h3 class="text-primary"><span class="font-italic">Category </span>{{ $post->category->cat_name }}</h3>

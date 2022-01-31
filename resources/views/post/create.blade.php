@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <form action="{{ route('admin.post.store') }}" method="post">
+        <form action="{{ route('admin.post.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -13,8 +13,12 @@
 
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                <textarea class="form-control" name="description"
-                    value="{{ old('description') }}"></textarea>
+                <textarea class="form-control" name="description" value="{{ old('description') }}"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Img Cover</label>
+                <input name="cover_img" class="form-control" type="file">
             </div>
 
             <div class="mb-3">

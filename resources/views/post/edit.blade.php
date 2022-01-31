@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('admin.post.update', $post->id) }}" method="post">
+        <form action="{{ route('admin.post.update', $post->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
 
@@ -14,6 +14,11 @@
             <div class="mb-3">
                 <label class="form-label">Description</label>
                 <textarea class="form-control" name="description" value="{!! old('description') !!}"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Img Cover</label>
+                <input name="cover_img" class="form-control" type="file" value="{{ $post['cover_img'] }}">
             </div>
 
             <div class="mb-3">

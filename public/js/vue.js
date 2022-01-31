@@ -2057,7 +2057,56 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      formSubmitted: false,
+      form: {
+        name: "",
+        email: "",
+        message: ""
+      }
+    };
+  },
+  methods: {
+    onSubmit: function onSubmit() {
+      var _this = this;
+
+      window.axios.post("/api/contacts", this.form).then(function (resp) {
+        _this.formSubmitted = true;
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2072,6 +2121,11 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2313,6 +2367,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3771,7 +3830,110 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Contact")])
+  return _c("div", [
+    _c("div", { staticClass: "container pb-5" }, [
+      !_vm.formSubmitted
+        ? _c(
+            "form",
+            {
+              on: {
+                submit: function ($event) {
+                  $event.preventDefault()
+                  return _vm.onSubmit.apply(null, arguments)
+                },
+              },
+            },
+            [
+              _c("div", { staticClass: "form-group mb-3" }, [
+                _c("label", { staticClass: "form-label" }, [_vm._v("Name")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.name,
+                      expression: "form.name",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.form.name },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "name", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group mb-3" }, [
+                _c("label", { staticClass: "form-label" }, [_vm._v("Email")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.email,
+                      expression: "form.email",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.form.email },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "email", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group mb-3" }, [
+                _c("label", { staticClass: "form-label" }, [_vm._v("Message")]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.message,
+                      expression: "form.message",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.form.message },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "message", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("button", { staticClass: "btn btn-success" }, [
+                _vm._v("Invia"),
+              ]),
+            ]
+          )
+        : _c("div", { staticClass: "alert alert-success" }, [
+            _vm._v(
+              "\n      Grazie per averci contattato, le risponderemo il prima possibile.\n    "
+            ),
+          ]),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3852,6 +4014,14 @@ var render = function () {
                       ]),
                     ]
                   ),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "w-50 m-2 rounded",
+                    attrs: {
+                      src: post ? "/storage/" + post.cover_img : "",
+                      alt: post ? post.title : "",
+                    },
+                  }),
                   _vm._v(" "),
                   _c("p", {
                     staticClass: "bg-light text-dark rounded mx-5 py-3",
@@ -4104,6 +4274,14 @@ var render = function () {
       _vm._v(" "),
       _c("p", {
         domProps: { innerHTML: _vm._s(_vm.post ? _vm.post.description : "") },
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "w-50",
+        attrs: {
+          src: _vm.post ? "/storage/" + _vm.post.cover_img : "",
+          alt: _vm.post ? _vm.post.title : "",
+        },
       }),
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.post ? _vm.post.category.cat_name : ""))]),

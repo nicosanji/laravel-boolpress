@@ -34,6 +34,11 @@
               >
                 <h3 class="py-2">{{ post.title }}</h3>
               </router-link>
+              <img
+                class="w-50 m-2 rounded"
+                :src="post ? `/storage/` + post.cover_img : ''"
+                :alt="post ? post.title : ''"
+              />
               <p
                 class="bg-light text-dark rounded mx-5 py-3"
                 v-html="post.description"

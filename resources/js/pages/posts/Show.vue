@@ -2,6 +2,11 @@
   <div>
     <h3>{{ post ? post.title : "" }}</h3>
     <p v-html="post ? post.description : ''"></p>
+    <img
+      class="w-50"
+      :src="post ? `/storage/` + post.cover_img : ''"
+      :alt="post ? post.title : ''"
+    />
     <p>{{ post ? post.category.cat_name : "" }}</p>
     <p>{{ post ? post.user.name : "" }}</p>
     <span
