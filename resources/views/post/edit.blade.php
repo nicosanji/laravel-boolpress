@@ -13,7 +13,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Description</label>
-                <textarea class="form-control" name="description" value="{!! old('description') !!}"></textarea>
+                <textarea class="form-control" name="description">{{ $post->description }}</textarea>
             </div>
 
             <div class="mb-3">
